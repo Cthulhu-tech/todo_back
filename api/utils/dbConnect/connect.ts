@@ -7,7 +7,8 @@ export const connectDB = async () => {
         database: process.env.db,
         host: process.env.host,
         user: process.env.user,
-        password: process.env.password
+        password: process.env.password,
+        port: +(process.env.port as string)
 
     });
 
