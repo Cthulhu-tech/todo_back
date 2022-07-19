@@ -32,4 +32,4 @@ app.post('/api/add', (req:Request, res:Response) => add(req, res));
 app.put('/api/update', (req:Request, res:Response) => update(req, res));
 app.delete('/api/delete', (req:Request, res:Response) => deleteTodo(req, res));
 
-app.listen('3002');
+app.listen('3001');
