@@ -8,3 +8,12 @@ export interface IReapeatUser extends RowDataPacket {
     jwt: string
 
 }
+
+export interface ITodoData extends RowDataPacket {
+
+    user_id: number
+    todo_time_start: string
+    todo_time_end: string
+    todo_text: string
+
+}
