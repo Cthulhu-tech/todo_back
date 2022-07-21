@@ -3,6 +3,8 @@ import { Request, Response } from "express";
 
 export const get = async (req:Request, res:Response) => {
 
-    await connectDB();
+    const connection = await connectDB();
+    await connection.end();
+    res.json(    {userData: {todo_pendings: "pendings", todo_completed: "completed"}})
 
 }

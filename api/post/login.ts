@@ -38,8 +38,11 @@ export const login = async (req: Request, res: Response) => {
 
         await connection.query('UPDATE user SET jwt = ? WHERE login = ?', [refreshtoken, login]);
 
+        await connection.end();
+
         await sendRefreshToken(res, refreshtoken);
         await sendAccessToken(res, accesstoken, user[0][0]);
+        
 
     }else{
 
