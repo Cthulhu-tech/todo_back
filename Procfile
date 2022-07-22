@@ -1,3 +1,4 @@
+worker: npm run postinstall
 worker: npm start
 
-web: node ./index.ts
+web: node ./dist/index.js
