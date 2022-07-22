@@ -5,7 +5,7 @@ import { Request, Response } from "express";
 export const deleteTodo = async (req:Request, res:Response) => {
 
     const {id} = req.body;
-    console.log(req)
+
     if(!!id){
 
         const userId = ChechAuthorization(req, res);

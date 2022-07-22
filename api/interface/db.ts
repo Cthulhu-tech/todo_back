@@ -17,3 +17,10 @@ export interface ITodoData extends RowDataPacket {
     todo_text: string
 
 }
+
+export interface ITodoDataCompleted extends RowDataPacket {
+
+    completed: number
+
+}
+
