@@ -20,7 +20,7 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(cors({origin: "https://todo-react-type.herokuapp.com", credentials: true, optionSuccessStatus: 204, headers: "Access-Control-Allow-Headers, Origin, X-Requested-With, Content-Type, Accept, Authorization"}));
+app.use(cors({origin: process.env.ORIGIN, credentials: true, optionSuccessStatus: 204, headers: "Access-Control-Allow-Headers, Origin, X-Requested-With, Content-Type, Accept, Authorization"}));
 
 app.post('/login', (req:Request, res:Response) => login(req, res));
 app.post('/regist', (req:Request, res:Response) => regist(req, res));
