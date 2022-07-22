@@ -13,6 +13,8 @@ import { refresh } from "./api/post/refresh";
 import { regist } from "./api/post/regist";
 import { update } from "./api/put/update";
 
+import session from 'express-session';
+
 const express = require('express');
 const app = express();
 
@@ -21,6 +23,14 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors({origin: process.env.ORIGIN, credentials: true, optionSuccessStatus: 204, headers: "Access-Control-Allow-Headers, Origin, X-Requested-With, Content-Type, Accept, Authorization"}));
+
+app.set('trust proxy', 1) // trust first proxy
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}));
 
 app.post('/login', (req:Request, res:Response) => login(req, res));
 app.post('/regist', (req:Request, res:Response) => regist(req, res));
